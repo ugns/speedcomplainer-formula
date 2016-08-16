@@ -37,8 +37,11 @@ speedcomplainer_init:
 speedcomplainer_config:
   file.managed:
     - name: {{ speedcomplainer.virtualenv }}/config.json
+    - source: salt://speedcomplainer/files/{{ grains.init }}
     - mode: 600
-    - contents: {{ speedcomplainer.config|json }}
+    - template: jinja
+    - context:
+        config: {{ speedcomplainer.config }}
     - contents_newline: True
     - require:
       - git: speedcomplainer
