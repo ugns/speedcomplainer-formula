@@ -13,7 +13,7 @@
       'init_script': '/etc/systemd/system/speedcomplainer.service',
       'init_mode': '0644',
     },
-  }, grain='init', merge=salt['pillar.get']('salt:lookup'))
+  }, grain='init')
 %}
 
 {## Merge the init_map to the default settings ##}
