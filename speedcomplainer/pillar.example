@@ -1,15 +1,19 @@
 speedcomplainer:
+  # If you wish to change where it is deployed and where from
   virtualenv: /usr/local/share/speedcomplainer
   source: https://github.com/UGNS/speedcomplainer.git
 
   config:
+    # You'll need to get your twitter token and consumer info from your account
     twitter:
       token: ''
       token_secret: ''
       consumer_key: ''
       consumer_secret: ''
     internetSpeed: 50
-    tweet_to: ''
+    # Set to who you want to direct tweet towards
+    tweet_to: '@Comcast'
+    # There are no defaults for tweetThresholds, you must set these if you want it to tweeet
     tweetThresholds:
       5:
         - Hey {tweetTo} I'm paying for {internetSpeed}Mb/s but getting only {downloadResult} Mb/s?!? Shame.
