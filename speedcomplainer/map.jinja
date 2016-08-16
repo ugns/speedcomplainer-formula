@@ -21,6 +21,5 @@
 
 {% set speedcomplainer = salt['pillar.get'](
     'speedcomplainer',
-    default=default_settings.speedcomplainer,
-    merge=True)
+    default=default_settings.speedcomplainer)
 %}
