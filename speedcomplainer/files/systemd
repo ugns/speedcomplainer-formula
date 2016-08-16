@@ -1,0 +1,11 @@
+[Unit]
+Description=Speedcomplainer
+After=network.target
+
+[Service]
+Environment=PATH={{ venv_path }}/bin:$PATH
+ExecStart={{ venv_path }}/speedcomplainer.py start
+ExecStop={{ venv_path }}/speedcomplainer.py stop
+
+[Install]
+WantedBy=multi-user.target
